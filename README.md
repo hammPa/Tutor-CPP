@@ -1,9 +1,8 @@
 # Tutor-CPP
-Sedikit tutor c++ tapi bukan dasar
 
 1. Function Pointer
-   Function pointer adalah variabel yang berfungsi menyimpan fungsi yang sebelumnya sudah di buat, lebih tepatnya menyimpan alamat dari sebuah fungsi yang sudah exist. Atau jika teman teman sebeumnya pernah menggunakan bahasa yang dynamically typed language, maka teman teman mungkin familiar dengan konsep function expression pada javascript.
-Misal kita punya fungsi :
+Function pointer adalah variabel yang berfungsi menyimpan fungsi yang sebelumnya sudah di buat, lebih tepatnya menyimpan alamat dari sebuah fungsi yang sudah exist. Atau jika teman teman sebeumnya pernah menggunakan bahasa yang dynamically typed language, maka teman teman mungkin familiar dengan konsep function expression pada javascript. Misal kita punya fungsi :
+
 void display(){
     cout << "Hello World" << endl;
 }
