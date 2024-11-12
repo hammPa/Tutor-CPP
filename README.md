@@ -1,6 +1,6 @@
 # Tutor-CPP
 
-1. Function Pointer
+# 1. Function Pointer
 Function pointer adalah variabel yang berfungsi menyimpan fungsi yang sebelumnya sudah di buat, lebih tepatnya menyimpan alamat dari sebuah fungsi yang sudah exist. Atau jika teman teman sebeumnya pernah menggunakan bahasa yang dynamically typed language, maka teman teman mungkin familiar dengan konsep function expression pada javascript. Misal kita punya fungsi :
 
 void display(){
@@ -18,6 +18,7 @@ Misal kita tampilkan dengan cout dama fungsinya, maka akan menampilkan alamat, s
 Lebih jelasnya : 
   
 ![image](https://github.com/user-attachments/assets/028d430a-4728-43cb-9dbc-e342123624a2)
+
 Ini akan menampilkan 1 karena belumdi casting, jjika ingin melihat alamatnya maka harus di cating sesuai tipe datanya, di kasus ini casting dengan tipe void *, maka akan menghasilkan :
   
 ![image](https://github.com/user-attachments/assets/f994371e-6a1d-4442-b0e5-6b7adcb8472f)
@@ -44,4 +45,4 @@ Atau bisa langsung di isi apa yang mau ditampilkan ke dalam argumen tanpa perlu 
   
 HigherOrderFunction([](){ cout << "Hello HOF dengan lambda function" << endl; });
 
-___
+# 2. 
