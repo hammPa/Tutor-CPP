@@ -57,4 +57,30 @@ Atau bisa langsung di isi apa yang mau ditampilkan ke dalam argumen tanpa perlu 
 HigherOrderFunction([](){ cout << "Hello HOF dengan lambda function" << endl; });
 ```
 
+Kita juga bisa mengubah function yang di tunjuk oleh sebuah variabel dengan callback pada parameter function pengubah, ribet ? YOII. Contoh :
+```cpp
+void displayHalo(){ std::cout << "tampilkan halo\n"; }
+void displayAhihihi(){ std::cout << "tampilkan ahihihi\n"; }
+
+void changeFunc(void (**callback)(), void (*newFunc)(){
+    *callback = newFunc;
+}
+
+int main(){
+
+    void (*myfunc)() = displayHalo;
+    myfunc();
+
+    changeFunc(&myfunc, displayAhihihi);
+
+    myfunc();
+
+    return 0;
+}
+```
+
+Hasilnya :
+![image](https://github.com/user-attachments/assets/9d8ac2dc-70e2-40e0-bc60-e05501107a67)
+
+
 # 2. 
