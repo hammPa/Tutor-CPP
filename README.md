@@ -108,3 +108,56 @@ int main() {
 Dan hasilnya tetap bakalan sama kayak yang di atas tadi :D
 
 # 2. 
+
+# 3. Overloading Operator
+Overloading operator adalah konsep menambahkan fungsi pada operator default yang telah ada di cpp sebelumnya, ribet ? Iya sih ehek.
+Syntax begini :
+```cpp
+friend/* optional */ tipe_data operator operator_yang_akan_dipakai(tipe_data parameter){
+} 
+```
+Tapi kita singkat saja, misal kita punya array (tidak usah hiraukan tipe datanya dulu, ini pakai style STL bawaan cpp) : 
+```cpp
+array<int, 3> arr = {1, 2, 3};
+```
+
+Nah, untuk menampilkan ini harus pakai looping kan, jadi setiap ingin menamppilkan data harus di looping, atau bisa juga menggunakan function saja, jadi setiap ingin melihat data dalam array, maka tinggal panggil nama fungsi, tapi ada cara lain yaitu dengan overloading operator dan friend function, berikut caranya :
+```cpp
+kita include dulu headernya, yaitu ostream, maka :
+
+#include <ostream>
+
+// lalu kita buat sebuah friend function
+friend std::ostream& operator<<(std::ostream& os, array& arr){
+    std::cout << "[ ";
+    for(size_t i = 0; i < arr.size(); i++){
+        os << arr[i];
+    }
+    std::cout << "]";
+    return os;
+}
+
+// memanggil operator overload << :
+std::cout << arr << "\n";
+```
+
+Maka di sini akan menampilkan semua element array. Contoh operator lain :
+```cpp
+class array {
+private:
+    int data[3];
+public:
+    int operator[](size_t index) { return data[index]; }    
+};
+
+// misal kita punya array ukuran 3 tipe data int, maka
+array arr = {1, 2, 3}; // abaikan dulu bagaimana caranya nilai  ini bisa masuk, yang penting kita bahas overloadingnya
+
+// awalnya untuk mengakseskita harus menulis ini :
+std::cout << arr.data[0] << "\n";
+// maka saat kita tulis syntax ini akan bisa tidak akan error:
+std::cout << arr[0] << "\n";
+std::cout << arr[1] << "\n";
+std::cout << arr[2] << "\n";
+```
+Hasilnya akan menampilkan semua element array hanya dengan cout pada bagian nama variabelnya.
