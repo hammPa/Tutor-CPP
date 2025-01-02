@@ -1,7 +1,7 @@
 # Tutor-CPP
 
 # 1. Function Pointer
-Function pointer adalah variabel yang berfungsi menyimpan fungsi yang sebelumnya sudah di buat, lebih tepatnya menyimpan alamat dari sebuah fungsi yang sudah exist. Atau jika teman teman sebeumnya pernah menggunakan bahasa yang dynamically typed language, maka teman teman mungkin familiar dengan konsep function expression pada javascript. Misal kita punya fungsi :
+Function pointer adalah variabel yang berfungsi menyimpan fungsi yang sebelumnya sudah di buat, lebih tepatnya menyimpan alamat dari sebuah fungsi yang sudah exist. Atau jika teman teman sebelumnya pernah menggunakan bahasa yang dynamically typed language, maka teman teman mungkin familiar dengan konsep function expression pada javascript. Misal kita punya fungsi :
 
 ```cpp
 void display(){
@@ -16,12 +16,12 @@ void HigherOrderFunction(void(*func)()){
     func();
 }
 ```
-Misal kita tampilkan dengan cout dama fungsinya, maka akan menampilkan alamat, sama seperti bila kita menampilkan dengan menggunakan ampersand (&). 
+Misal kita tampilkan dengan cout nama fungsinya, maka akan menampilkan alamat, sama seperti bila kita menampilkan dengan menggunakan ampersand (&). 
 Lebih jelasnya : 
   
 ![image](https://github.com/user-attachments/assets/028d430a-4728-43cb-9dbc-e342123624a2)
 
-Ini akan menampilkan 1 karena belumdi casting, jjika ingin melihat alamatnya maka harus di cating sesuai tipe datanya, di kasus ini casting dengan tipe void *, maka akan menghasilkan :
+Ini akan menampilkan 1 karena belum di casting, jika ingin melihat alamatnya maka harus di cating sesuai tipe datanya, di kasus ini casting dengan tipe void *, maka akan menghasilkan :
   
 ![image](https://github.com/user-attachments/assets/f994371e-6a1d-4442-b0e5-6b7adcb8472f)
 
@@ -80,7 +80,31 @@ int main(){
 ```
 
 Hasilnya :
+
 ![image](https://github.com/user-attachments/assets/9d8ac2dc-70e2-40e0-bc60-e05501107a67)
 
+
+Lanjut..... 
+Bang bang kalau di KING C++ gmn bg 🗣️🗣️ ?
+Makin Gampang Cuy, pakai reference (&) aja, gni loh :
+
+```cpp
+void changeFuncCpp(void (*&callback)(), void (*newFunc)()) {
+    callback = newFunc;
+}
+
+int main() {
+    void (*callback)() = displayHalo;
+    callback();
+
+    changeFuncCpp(callback, displayAhihihi);
+
+    callback();
+
+    return 0;
+}
+```
+
+Dan hasilnya tetap bakalan sama kayak yang di atas tadi :D
 
 # 2. 
